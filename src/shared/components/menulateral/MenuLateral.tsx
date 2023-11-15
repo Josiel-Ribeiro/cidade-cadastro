@@ -13,15 +13,46 @@ import {
 } from "@mui/material";
 import { ReactNode } from "react";
 import { useDrawerContext } from "../../context";
-import axios from "axios"
+import { useMatch, useNavigate, useResolvedPath } from "react-router-dom";
+
+interface IListItemLinkProps {
+  label: string;
+  icon: string;
+  to: string;
+  onClick: (() => void) | undefined;
+}
+
+const ListItemLink = ({ icon, label, onClick, to }: IListItemLinkProps) => {
+  const navigate = useNavigate();
+
+  const resolvePath = useResolvedPath(to);
+  const match = useMatch({ path: resolvePath.pathname, end: false });
+
+  const handleClick = () => {
+    navigate(to);
+    onClick?.();
+  };
+  return (
+    <ListItemButton selected={!!match} onClick={handleClick}>
+      <ListItemIcon>
+        <Icon>{icon}</Icon>
+      </ListItemIcon>
+      <ListItemText primary={label} />
+    </ListItemButton>
+  );
+};
 
 export const MenuLateral = ({ children }: { children: ReactNode }) => {
   const theme = useTheme();
- const smDown = useMediaQuery(theme.breakpoints.down('sm'))
- const {isDrawerOpen,toogleDrawerOpen} = useDrawerContext()
+  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isDrawerOpen, toogleDrawerOpen,drawerOptions } = useDrawerContext();
   return (
     <>
-      <Drawer open={isDrawerOpen} variant={smDown? "temporary":"permanent"} onClose={toogleDrawerOpen}>
+      <Drawer
+        open={isDrawerOpen}
+        variant={smDown ? "temporary" : "permanent"}
+        onClose={toogleDrawerOpen}
+      >
         <Box
           width={theme.spacing(28)}
           height={"100%"}
@@ -43,22 +74,27 @@ export const MenuLateral = ({ children }: { children: ReactNode }) => {
           <Divider />
           <Box flex={1}>
             <List component="nav">
-              <ListItemButton>
-                <ListItemIcon>
-                  <Icon>home</Icon>
-                </ListItemIcon>
-                <ListItemText primary="Pagina Inicial" />
-              </ListItemButton>
+              {
+                drawerOptions.map(item =>
+                  
+                  <ListItemLink
+                  key={item.patch}
+                icon={item.icon}                
+                label={item.label}
+                to={item.patch}
+                onClick={smDown ? toogleDrawerOpen : undefined}
+              />
+                  
+                  )
+              }
             </List>
           </Box>
         </Box>
       </Drawer>
 
-      <Box height={ "100vh"} marginLeft={ smDown?"0" : theme.spacing(28)}>
+      <Box height={"100vh"} marginLeft={smDown ? "0" : theme.spacing(28)}>
         {children}
       </Box>
     </>
   );
 };
-
-
