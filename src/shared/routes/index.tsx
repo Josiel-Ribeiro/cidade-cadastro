@@ -1,11 +1,12 @@
-import { Button } from "@mui/material";
+
 import { Route, Routes, Navigate } from "react-router-dom";
 
 import { useDrawerContext } from "../context";
 import { useEffect } from "react";
+import { Dashboard } from "../pages";
 
 export const AppRoutes = () => {
-    const { toogleDrawerOpen, setDraweroptions } = useDrawerContext();
+    const {  setDraweroptions } = useDrawerContext();
 
     useEffect(() => {
         setDraweroptions([
@@ -19,13 +20,7 @@ export const AppRoutes = () => {
             <Route
                 path="/pagina-inicial"
                 element={
-                    <Button
-                        onClick={toogleDrawerOpen}
-                        variant="contained"
-                        color="primary"
-                    >
-                        Toggle Menu
-                    </Button>
+                <Dashboard/>
                 }
             />
             
