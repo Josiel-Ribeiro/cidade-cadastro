@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FerramentasDaListagem } from "../../components";
+import { FerramentasDaListagem, FerramentasDeDetalhe } from "../../components";
 import { LayoutBaseDePagina } from "../../layouts";
 
 export const Dashboard = () => {
@@ -9,12 +9,7 @@ export const Dashboard = () => {
     <LayoutBaseDePagina
       titulo="Pagina inicial"
       BarraDeFerramentas={
-        <FerramentasDaListagem
-          mostrarInputBusca
-          textoDaBusca={texto}
-          aoMudarTextoDeBusca={() => setTexto}
-          aoClicarEmNovo={() => setTexto}
-        />
+     <FerramentasDeDetalhe/>
       }
     >
       testeando
