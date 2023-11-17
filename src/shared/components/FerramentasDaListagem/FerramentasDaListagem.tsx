@@ -1,5 +1,7 @@
 import { Box, Button, Icon, Paper, TextField, useTheme } from "@mui/material";
 
+import { Environment } from "../../environments";
+
 interface IFerramentasDaListagem{
     textoDaBusca?:string
     mostrarInputBusca?:boolean
@@ -34,7 +36,7 @@ textoBotaoNovo = "Novo"
    { mostrarInputBusca && (
        <TextField 
        size="small" 
-       placeholder="Pesquisar"
+       placeholder={Environment.INPUT_DE_BUCAS}
        value={textoDaBusca}
        onChange={(e)=>aoMudarTextoDeBusca(e.target.value)}
        
