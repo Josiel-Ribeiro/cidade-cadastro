@@ -1,2 +1,5 @@
 export * from './dashbord/Dashboart'
-export * from './cidades/ListagemDePessoas'
+export * from './pessoas/ListagemDePessoas'
+export * from './pessoas/DetalheDePesoas'
+export * from './cidades/DetalheDeCidades'
+export * from './cidades/ListagemDeCidades'

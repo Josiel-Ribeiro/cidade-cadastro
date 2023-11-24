@@ -51,7 +51,7 @@ textoBotaoNovo = "Novo"
       >
         {
             mostratBotaoNovo && (
-                <Button
+                <Button onClick={aoClicarEmNovo}
           variant="contained"
           disableElevation
           endIcon={<Icon>add</Icon>}

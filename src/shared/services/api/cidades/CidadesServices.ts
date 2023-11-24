@@ -6,21 +6,19 @@ import { Api } from "../axios-config";
 
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 
-export interface IListagemPessoas {
+export interface IListagemCidades {
   id: number;
-  nomeCompleto: string;
-  email: string;
-  cidadeId: number;
+  nome: string;
+ 
 }
 export interface IDatelhePessoa {
   id: number;
-  nomeCompleto: string;
-  email: string;
-  cidadeId: number;
+  nome: string;
+ 
 }
 
 type TPessoaComTotalCount = {
-  data: IListagemPessoas[];
+  data: IListagemCidades[];
   totalCount: number;
 };
 
@@ -29,7 +27,7 @@ const getAll = async (
   filter = ""
 ): Promise<TPessoaComTotalCount | Error> => {
   try {
-    const urlRelativa = `/pessoas?_page=${page}&_limit=${Environment.LIMITITE_DE_LINHAS}&nomeCompleto_like=${filter}`;
+    const urlRelativa = `/cidades?_page=${page}&_limit=${Environment.LIMITITE_DE_LINHAS}&nome_like=${filter}`;
     const { data, headers } = await Api.get(urlRelativa);
 
     if (data) {
@@ -50,7 +48,7 @@ const getAll = async (
 
 const getByld = async (id: number): Promise<IDatelhePessoa| Error> => {
   try {
-    const { data } = await Api.get(`/pessoas/${id}`);
+    const { data } = await Api.get(`/cidades/${id}`);
     if (data) {
       return data 
       }
@@ -67,7 +65,7 @@ const create = async (dados:Omit<IDatelhePessoa,'id'>): Promise<number| Error> =
 try{
    
 
- const {data} = await Api.post<IDatelhePessoa>(`/pessoas`,dados)
+ const {data} = await Api.post<IDatelhePessoa>(`/cidades`,dados)
  if(data){
     return data.id
  }
@@ -81,7 +79,7 @@ try{
 const updateById = async (id:number,dados:IDatelhePessoa): Promise<void | Error> => {
 
    try {
-    await Api.put(`/pessoas/${id}`,dados)
+    await Api.put(`/cidades/${id}`,dados)
 
    } catch (error) {
     
@@ -93,13 +91,13 @@ const updateById = async (id:number,dados:IDatelhePessoa): Promise<void | Error>
 
 const deleteById = async (id:number): Promise<void | Error> => {
     try {
-       await Api.delete(`/pessoas/${id}`)
+       await Api.delete(`/cidades/${id}`)
     } catch (error) {
         return new Error("Erro ao deletar")
     }
 };
 
-export const PessoaServices = {
+export const CidadesServices = {
   getAll,
   getByld,
   create,

@@ -1,95 +1,30 @@
 {
-    "pessoas":[
-        {
-          "id": 1,
-          "nomeCompleto": "Josiel Lucas",
-          "email": "josielucas615@example.com"
-        },
-        {
-          "id": 2,
-          "nomeCompleto": "Josimar Isaias",
-          "email": "josimarisaia615@example.com"
-        },
-        {
-          "id": 3,
-          "nomeCompleto": "Carlos",
-          "email": "carlos615@example.com"
-        },
-        {
-          "id": 4,
-          "nomeCompleto": "Mario",
-          "email": "mario615@example.com"
-        },
-        {
-          "id": 5,
-          "nomeCompleto": "Pedro Marcos",
-          "email": "pedromarcos615@example.com"
-        },
-        {
-          "id": 6,
-          "nomeCompleto": "Josiel Lucas",
-          "email": "josielucas615@example.com"
-        },
-        {
-          "id": 7,
-          "nomeCompleto": "Josimar Isaias",
-          "email": "josimarisaia615@example.com"
-        },
-        {
-          "id": 8,
-          "nomeCompleto": "Carlos",
-          "email": "carlos615@example.com"
-        },
-        {
-          "id": 9,
-          "nomeCompleto": "Mario",
-          "email": "mario615@example.com"
-        },
-        {
-          "id": 10,
-          "nomeCompleto": "Pedro Marcos",
-          "email": "pedromarcos615@example.com"
-        },
-        {
-          "id": 11,
-          "nomeCompleto": "Josiel2EWEW1E Lucas",
-          "email": "josielucas615@example.com"
-        },
-        {
-          "id": 12,
-          "nomeCompleto": "Josimar IWQWEWQEsaias",
-          "email": "josimarisaia615@example.com"
-        },
-        {
-          "id": 13,
-          "nomeCompleto": "Carlos",
-          "email": "carlos615@example.com"
-        },
-        {
-          "id": 14,
-          "nomeCompleto": "Mario",
-          "email": "mario615@example.com"
-        },
-        {
-          "id": 15,
-          "nomeCompleto": "Pedro Marcos",
-          "email": "pedromarcos615@example.com"
-        },
-        {
-          "id": 16,
-          "nomeCompleto": "Josiel Lucas",
-          "email": "josielucas615@example.com"
-        },
-        {
-          "id": 17,
-          "nomeCompleto": "Josimar Isaias",
-          "email": "josimarisaia615@example.com"
-        },
-        {
-          "id": 18,
-          "nomeCompleto": "Carlos",
-          "email": "carlos615@example.com"
-        }
-      ]
-      
+  "pessoas": [
+    {
+      "id": 2,
+      "nomeCompleto": "Carlos Roberto justos",
+      "email": "carlos.oliveira@example.com",
+      "cidadeId": 4
+    },
+    {
+      "id": 3,
+      "nomeCompleto": "josiel lucas",
+      "email": "Josiel@gamil.com",
+      "cidadeId": 3
+    }
+  ],
+  "cidades": [
+    {
+      "nome": "Piedade",
+      "id": 2
+    },
+    {
+      "nome": "Valadares",
+      "id": 3
+    },
+    {
+      "nome": "Santa Rita",
+      "id": 4
+    }
+  ]
 }
