@@ -15,8 +15,8 @@
   ],
   "cidades": [
     {
-      "nome": "Piedade",
-      "id": 2
+      "id": 2,
+      "nome": "Piedade"
     },
     {
       "nome": "Valadares",
@@ -26,5 +26,8 @@
       "nome": "Santa Rita",
       "id": 4
     }
-  ]
+  ],
+  "auth": {
+    "acessToken": "jjfjfsd~fsddhjhuheovheovh"
+  }
 }

@@ -12,7 +12,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { ReactNode } from "react";
-import { useContextTheme, useDrawerContext } from "../../context";
+import { useAuthContext, useContextTheme, useDrawerContext } from "../../context";
 import { useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 
 interface IListItemLinkProps {
@@ -47,6 +47,7 @@ export const MenuLateral = ({ children }: { children: ReactNode }) => {
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const { isDrawerOpen, toogleDrawerOpen,drawerOptions } = useDrawerContext();
   const {toogleTheme} = useContextTheme()
+  const {logout} = useAuthContext()
   return (
     <>
       <Drawer
@@ -99,6 +100,15 @@ export const MenuLateral = ({ children }: { children: ReactNode }) => {
       </ListItemIcon>
       <ListItemText primary={"Alternar tema"} />
     </ListItemButton>
+
+
+    <ListItemButton onClick={logout}>
+      <ListItemIcon>
+        <Icon>logout</Icon>
+      </ListItemIcon>
+      <ListItemText primary={"Sair"} />
+    </ListItemButton>
+
             </List>
           </Box>
         </Box>
